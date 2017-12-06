@@ -1,0 +1,19 @@
+server:
+    port: 9080
+spring:
+    devtools:
+      restart:
+        exclude:  static/**,public/**
+        enabled:  true
+    datasource:
+        name: suyu
+        url: jdbc:mysql://127.0.0.1:3306/suyu?useUnicode=true&characterEncoding=utf8
+        username: root
+        password: root
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mappers/*Mapper.xml
